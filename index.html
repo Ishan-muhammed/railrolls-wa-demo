@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rail Rolls CLT — WhatsApp Ordering</title>
+  <meta name="description" content="WhatsApp AI Food Ordering Demo for Rail Rolls Calicut (CLT)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="phone-frame">
+    <!-- Header -->
+    <div class="wa-header">
+      <div class="wa-header-left">
+        <div class="wa-avatar">RR</div>
+        <div class="wa-header-info">
+          <div class="wa-header-name">Rail Rolls CLT</div>
+          <div class="wa-header-status">online</div>
+        </div>
+      </div>
+      <div class="wa-header-actions">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#aebac1">
+          <path
+            d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z">
+          </path>
+        </svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#aebac1">
+          <path
+            d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z">
+          </path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="wa-chat" id="chatArea">
+      <div class="wa-date-badge">Today</div>
+    </div>
+
+    <!-- Input Bar -->
+    <div class="wa-input-bar">
+      <div class="wa-input-row">
+        <textarea id="userInput" class="wa-input" placeholder="Type a message" rows="1"></textarea>
+        <button class="wa-send-btn" id="sendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff">
+            <path d="M1.1 21.757l22.4-9.76L1.1 2.24l.003 7.562 16.085 2.196L1.103 14.19z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quantity Modal -->
+    <div class="modal-overlay" id="qtyModal">
+      <div class="modal-card qty-modal">
+        <div class="modal-header">
+          <h3>Choose Quantity</h3>
+          <button class="modal-close" id="qtyClose">&times;</button>
+        </div>
+        <div class="qty-item-name" id="qtyItemName"></div>
+        <div class="qty-options" id="qtyOptions"></div>
+        <button class="btn-primary" id="addItemBtn">Add Item</button>
+      </div>
+    </div>
+
+
+    <!-- Customer Details Modal removed — now handled via chat messages -->
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="paymentModal">
+      <div class="modal-card payment-modal">
+        <div class="payment-icon" id="paymentIcon">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#25D366" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12l3 3 5-5" />
+          </svg>
+        </div>
+        <h3 id="paymentTitle">Processing Payment...</h3>
+        <p id="paymentAmount"></p>
+        <div class="payment-loader" id="paymentLoader">
+          <div class="loader-bar"></div>
+        </div>
+        <button class="btn-primary" id="paymentDoneBtn" style="display:none;">Back to Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
