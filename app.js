@@ -475,6 +475,10 @@ function handleSend() {
 sendBtn.addEventListener('click', handleSend);
 userInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && !e.shiftKey) {
+    // If on mobile (width <= 768px), allow Enter to create a new line instead of sending.
+    if (window.innerWidth <= 768) {
+      return;
+    }
     e.preventDefault();
     handleSend();
   }
